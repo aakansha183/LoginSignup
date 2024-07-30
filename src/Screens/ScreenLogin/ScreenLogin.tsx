@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput, Alert } from 'react-native';
+import { View, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { login } from '../../Redux/Slice/UserSlice'; 
@@ -65,7 +65,9 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
       />
       {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
 
-      <Button title="Login" onPress={handleSubmit(onSubmit)} />
+      <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
       <Text onPress={() => navigation.navigate('Register')} style={styles.link}>
         Don't have an account? Register
       </Text>

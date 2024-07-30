@@ -12,8 +12,7 @@ const initialState: ImageState = {
   loading: false,
   error: null,
 };
- 
-  
+
 const imageSlice = createSlice({
   name: 'images',
   initialState,

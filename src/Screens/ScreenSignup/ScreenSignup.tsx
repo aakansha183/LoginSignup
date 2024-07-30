@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,7 +29,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Register Screen</Text>
+      <Text style={styles.HeadingTitle}>Register Yourself</Text>
       <Controller
         control={control}
         name="username"
@@ -106,7 +106,9 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
       />
       {errors.lastname && <Text style={styles.errorText}>{errors.lastname.message}</Text>}
       
-      <Button title="Register" onPress={handleSubmit(onSubmit)} />
+      <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
+        <Text style={styles.buttonText}>Register</Text>
+      </TouchableOpacity>
     </View>
   );
 };

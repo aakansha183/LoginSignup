@@ -1,3 +1,4 @@
+// Store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import { createEpicMiddleware } from 'redux-observable';
 import { rootEpic } from './Epics';

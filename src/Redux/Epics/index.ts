@@ -1,4 +1,9 @@
 import { combineEpics } from 'redux-observable';
 import { fetchImagesEpic } from './FetchImageEpic';
 
-export const rootEpic = combineEpics(fetchImagesEpic);
+const epics = [
+  fetchImagesEpic,
+];
+
+export const rootEpic = combineEpics(...epics);
+
