@@ -25,12 +25,13 @@ export const styles = StyleSheet.create({
     errorText: {
         color: 'red',
         marginBottom: 8,
+        bottom:30,
       },
     Headingtext:{
         color:'#0C0404',
         fontWeight:'bold',
         fontSize:50,
-        bottom:100,
+        bottom:80,
 },
 
     

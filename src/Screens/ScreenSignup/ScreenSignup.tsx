@@ -1,4 +1,3 @@
-// ScreenSignup.tsx
 import React from 'react';
 import { View, Text, Button, TextInput } from 'react-native';
 import { useDispatch } from 'react-redux';

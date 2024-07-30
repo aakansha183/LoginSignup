@@ -7,12 +7,24 @@ export const styles = StyleSheet.create({
       padding: 16,
     },
     input: {
-      borderWidth: 1,
-      padding: 8,
+        color:'#0C0404',
+        backgroundColor:'#F5FEFD',
+        marginTop:30,
+        borderRadius:12,
+      borderWidth: 1.5,
+      padding: 16,
       marginVertical: 8,
+     bottom:30,
     },
     errorText: {
         color: 'red',
-        marginBottom: 8,
+        bottom:30,
+
+    },
+      HeadingTitle:{
+        color:'#0C0404',
+        fontWeight:'bold',
+        fontSize:50,
+        bottom:50,
       },
   });
