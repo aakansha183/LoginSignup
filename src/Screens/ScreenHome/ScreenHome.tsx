@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Redux/Slice/UserSlice';
 import { RootState } from '../../Redux/store';
 import { HomeScreenNavigationProp } from './utils/types';
-
+import { styles } from './StylesHome';
 type ImageData = {
   id: number;
   likes: number;
@@ -57,7 +57,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const renderItem = ({ item }: { item: ImageData }) => (
     <View style={styles.imageContainer}>
       <Image source={{ uri: item.webformatURL }} style={styles.image} />
-      <Text>Likes: {item.likes}</Text>
+      <Text style ={styles.likes}>Likes: {item.likes}</Text>
       <Text>Views: {item.views}</Text>
       <Text>Comments: {item.comments}</Text>
     </View>
@@ -76,18 +76,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  imageContainer: {
-    marginBottom: 16,
-  },
-  image: {
-    width: '100%',
-    height: 200,
-  },
-});
+
 
 export default HomeScreen;
