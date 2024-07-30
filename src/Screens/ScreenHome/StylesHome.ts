@@ -5,9 +5,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
+  HeadingTitle:{
+bottom:10,
+color:'#0C0404',
+fontSize:25,
+textAlign:'center',
+  },
   imageContainer: {
     marginBottom: 16,
-    bottom:30,
     padding: 20,
     backgroundColor: '#fff',
     borderRadius: 8,
@@ -20,9 +25,18 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 200,
+    borderRadius:12,
+  },
+  imageTitle:{
+    fontSize:25,
+    color:'#0C0404',
+    fontWeight:'bold',
+    marginTop:10,
+    marginBottom:20,
   },
   likes:{
-    
+    backgroundColor: '',
+      fontSize:20,
   }
 });
   
