@@ -36,7 +36,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.Signupinput}
             placeholder="Username"
             value={value}
             onChangeText={onChange}
@@ -51,7 +51,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.Signupinput}
             placeholder="Password"
             secureTextEntry
             value={value}
@@ -67,7 +67,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.Signupinput}
             placeholder="Enter your Email"
             value={value}
             onChangeText={onChange}
@@ -82,7 +82,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.Signupinput}
             placeholder="Enter Your FirstName"
             value={value}
             onChangeText={onChange}
@@ -97,7 +97,7 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.Signupinput}
             placeholder="Enter Your LastName"
             value={value}
             onChangeText={onChange}
@@ -106,8 +106,8 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
       />
       {errors.lastname && <Text style={styles.errorText}>{errors.lastname.message}</Text>}
       
-      <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
-        <Text style={styles.buttonText}>Register</Text>
+      <TouchableOpacity style={styles.Signupbutton} onPress={handleSubmit(onSubmit)}>
+        <Text style={styles.SignupbuttonText}>Register</Text>
       </TouchableOpacity>
     </View>
   );

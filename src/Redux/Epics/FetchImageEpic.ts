@@ -1,4 +1,3 @@
-import { Epic } from 'redux-observable';
 import { ofType } from 'redux-observable';
 import { mergeMap } from 'rxjs/operators';
 import { from, Observable, of } from 'rxjs';

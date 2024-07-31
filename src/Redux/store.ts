@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createEpicMiddleware } from 'redux-observable';
-import { rootEpic } from './Epics';
+import { rootEpic } from './Epics/Epicindex';
 import authReducer from './MasterSlice/UserSlice';
 import imageReducer from './MasterSlice/ImageSlice';
 

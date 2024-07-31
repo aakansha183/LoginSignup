@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     padding: 16,
     backgroundColor:'#EDF6FD'
   },
-  input: {
+  LoginInput: {
     backgroundColor: ' #FFFFFF',
     marginTop: 30,
     borderRadius: 12,
@@ -34,14 +34,14 @@ export const styles = StyleSheet.create({
     fontSize: 50,
     bottom: 80,
   },
-  button: {
+  Loginbutton: {
     backgroundColor: '#6CB4EE', 
     padding: 15,
     borderRadius: 12,
     alignItems: 'center',
     marginTop: 16,
   },
-  buttonText: {
+  LoginbuttonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',

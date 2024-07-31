@@ -1,11 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ImageData } from '../../Screens/ScreenHome/utils/types';
-
-interface ImageState {
-  images: ImageData[];
-  loading: boolean;
-  error: string | null;
-}
+import { ImageState } from '../utils/types';
 
 const initialState: ImageState = {
   images: [],
@@ -35,6 +30,6 @@ export const { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } = im
 export default imageSlice.reducer;
  
 export type ImageFetch = 
-ReturnType<typeof fetchImagesRequest>
+|ReturnType<typeof fetchImagesRequest>
 |ReturnType<typeof fetchImagesSuccess>
 |ReturnType<typeof fetchImagesFailure>;

@@ -17,7 +17,7 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
   const { control, handleSubmit, formState: { errors } } = useForm<LoginForm>({
     resolver: yupResolver(validationSchema),
   });
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();        
 
   const onSubmit = (data: LoginForm) => {
     const storedUsername = storage.getString('username');
@@ -40,7 +40,7 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.LoginInput}
             placeholder="Enter Your Username"
             value={value}
             onChangeText={onChange}
@@ -55,7 +55,7 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            style={styles.input}
+            style={styles.LoginInput}
             placeholder="Enter your Password"
             secureTextEntry
             value={value}
@@ -65,8 +65,8 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
       />
       {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
 
-      <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
-        <Text style={styles.buttonText}>Login</Text>
+      <TouchableOpacity style={styles.Loginbutton} onPress={handleSubmit(onSubmit)}>
+        <Text style={styles.LoginbuttonText}>Login</Text>
       </TouchableOpacity>
       <Text onPress={() => navigation.navigate('Register')} style={styles.link}>
         Don't have an account? Register

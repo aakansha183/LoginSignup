@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     padding: 16,
     backgroundColor:'#EDF6FD'
   },
-  input: {
+  Signupinput: {
     color: '#0C0404',
     backgroundColor: '#F5FEFD',
     marginTop: 30,
@@ -27,14 +27,14 @@ export const styles = StyleSheet.create({
     fontSize: 50,
     bottom: 50,
   },
-  button: {
+  Signupbutton: {
     backgroundColor: '#6CB4EE', 
     padding: 15,
     borderRadius: 12,
     alignItems: 'center',
     marginTop: 16,
   },
-  buttonText: {
+  SignupbuttonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
