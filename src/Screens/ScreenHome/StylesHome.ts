@@ -6,10 +6,10 @@ export const styles = StyleSheet.create({
     padding: 16,
     backgroundColor:'#EDF6FD'
   },
-HeadingTitle:{
-color:'#0C0404',
-fontSize:25,
-textAlign:'center',
+  HeadingTitle:{
+  color:'#0C0404',
+  fontSize:25,
+  textAlign:'center',
   },
   imageContainer: {
     marginBottom: 16,
@@ -23,13 +23,13 @@ textAlign:'center',
     elevation: 3,
     
   },
-  Header:{
+  welcomeHeader:{
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 20,
   },
-  image: {
+  imageFetched: {
     width: '100%',
     height: 230,
     borderRadius:12,
@@ -43,30 +43,29 @@ textAlign:'center',
     marginBottom:20,
   },
   likes:{
-    top:20,
-    left:10,
+    left:0,
     fontSize: 18,
     color: '#888',
     padding: 5,
     borderRadius: 3,
     
   },
-  comments:{
-    fontSize: 18,
-    color: '#888',
-    padding: 5,
-    borderRadius: 3,
-    left :252,
-    bottom:50,
-
+  likeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
+  
   views:{
     fontSize: 18,
     color: '#888',
     padding: 5,
     borderRadius: 3,
-left:115,
-bottom:14,
 
-  }
+  },
+  viewContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+ 
 });

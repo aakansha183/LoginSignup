@@ -1,15 +1,16 @@
 import { Epic } from 'redux-observable';
 import { ofType } from 'redux-observable';
 import { mergeMap } from 'rxjs/operators';
-import { from, of } from 'rxjs';
-import { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } from '../MasterSlice/ImageSlice';
+import { from, Observable, of } from 'rxjs';
+import { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure, ImageFetch } from '../MasterSlice/ImageSlice';
 import { ImageData } from '../../Screens/ScreenHome/utils/types';
+
 
 interface ApiResponse {
   hits: ImageData[];
 }
 
-export const fetchImagesEpic: Epic = (action$) =>
+export const fetchImagesEpic = (action$: Observable<ImageFetch>) =>
   action$.pipe(
     ofType(fetchImagesRequest.type),
     mergeMap(() =>

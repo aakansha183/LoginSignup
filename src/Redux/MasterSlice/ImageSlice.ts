@@ -33,3 +33,8 @@ const imageSlice = createSlice({
 
 export const { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } = imageSlice.actions;
 export default imageSlice.reducer;
+ 
+export type ImageFetch = 
+ReturnType<typeof fetchImagesRequest>
+|ReturnType<typeof fetchImagesSuccess>
+|ReturnType<typeof fetchImagesFailure>;

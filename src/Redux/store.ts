@@ -12,7 +12,7 @@ const store = configureStore({
     images: imageReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ thunk: false }).concat(epicMiddleware),
+    getDefaultMiddleware().concat(epicMiddleware),
 });
 
 epicMiddleware.run(rootEpic);
