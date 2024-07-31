@@ -2,7 +2,7 @@ import { Epic } from 'redux-observable';
 import { ofType } from 'redux-observable';
 import { mergeMap } from 'rxjs/operators';
 import { from, of } from 'rxjs';
-import { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } from '../Slice/ImageSlice';
+import { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure } from '../MasterSlice/ImageSlice';
 import { ImageData } from '../../Screens/ScreenHome/utils/types';
 
 interface ApiResponse {

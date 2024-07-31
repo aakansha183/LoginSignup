@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { View, Text, Button, ActivityIndicator, FlatList, Image, BackHandler } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchImagesRequest } from '../../Redux/Slice/ImageSlice';
+import { fetchImagesRequest } from '../../Redux/MasterSlice/ImageSlice';
 import { RootState } from '../../Redux/store';
 import { styles } from './StylesHome';
 import { HomeScreenNavigationProp, ImageData } from './utils/types';

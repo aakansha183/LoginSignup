@@ -1,4 +1,3 @@
-// utils/types.ts
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../utils/Types';
 

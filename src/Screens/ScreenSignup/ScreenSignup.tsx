@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { login } from '../../Redux/Slice/UserSlice';  
+import { login } from '../../Redux/MasterSlice/UserSlice';  
 import storage from '../../utils/MMKVstorage';
 import { RegisterForm, RegisterScreenNavigationProp } from './utils/types';
 import { styles } from './Stylessignup';

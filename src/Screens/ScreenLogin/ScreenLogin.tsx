@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { login } from '../../Redux/Slice/UserSlice'; 
+import { login } from '../../Redux/MasterSlice/UserSlice'; 
 import storage from '../../utils/MMKVstorage';
 import { styles } from './StylesLogin';
 import { LoginForm, LoginScreenNavigationProp } from './utils/types';

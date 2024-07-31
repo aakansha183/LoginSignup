@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Header } from "react-navigation-stack";
 
 export const styles = StyleSheet.create({
   container: {
