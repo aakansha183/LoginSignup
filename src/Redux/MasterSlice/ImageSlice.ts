@@ -19,7 +19,7 @@ const imageSlice = createSlice({
       state.images = action.payload;
       state.loading = false;
     },
-    fetchImagesFailure: (state, action: PayloadAction<string>) => {
+    fetchImagesFailure: (state, action:                                                                                                                                                        PayloadAction<string>) => {
       state.error = action.payload;
       state.loading = false;
     },

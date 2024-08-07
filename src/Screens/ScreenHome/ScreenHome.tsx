@@ -6,6 +6,8 @@ import { RootState } from '../../Redux/store';
 import { styles } from './StylesHome';
 import { HomeScreenNavigationProp } from './utils/types';
 import ImageList from './Components/ComponentImageList';
+import { logout } from '../../Redux/MasterSlice/UserSlice';
+import { logoutUser } from '../../Redux/MasterSlice/FirebaseAuth';
 
 type Props = {
   navigation: HomeScreenNavigationProp;
@@ -19,21 +21,10 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     dispatch(fetchImagesRequest());
   }, [dispatch]);
 
-  const handleBackButton = useCallback(() => {
-    BackHandler.exitApp();
-    return true;
-  }, []);
 
-  useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
-
-    return () => {
-      BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
-    };
-  }, [handleBackButton]);
-
-  const handleLogout = () => {
-    navigation.navigate('Login');
+  const handleLogout = async() => {
+    await logoutUser();
+    dispatch(logout());
   };
 
   if (loading) {

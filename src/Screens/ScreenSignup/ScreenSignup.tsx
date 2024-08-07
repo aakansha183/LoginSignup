@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { login } from '../../Redux/MasterSlice/UserSlice';  
-import storage from '../../utils/MMKVstorage';
 import { RegisterForm, RegisterScreenNavigationProp } from './utils/types';
 import { styles } from './Stylessignup';
 import { validationSchema } from './utils/ValidationSchema';
+import { signUpWithEmail } from '../../Redux/MasterSlice/FirebaseAuth';
 
 type Props = {
   navigation: RegisterScreenNavigationProp;
@@ -19,12 +19,13 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
   });
   const dispatch = useDispatch();
 
-  const onSubmit: SubmitHandler<RegisterForm> = (data) => {
-    storage.set('username', data.username);
-    storage.set('password', data.password);  
-
-    dispatch(login(data.username));
-    navigation.navigate('Home');
+  const onSubmit: SubmitHandler<RegisterForm> = async (data) => {
+    const response = await signUpWithEmail(data.email, data.password);
+    if (response.success) {
+      dispatch(login(data.email));
+    } else {
+      Alert.alert('Registration Error', response.message);
+    }
   };
 
   return (
@@ -32,19 +33,18 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
       <Text style={styles.HeadingTitle}>Register Yourself</Text>
       <Controller
         control={control}
-        name="username"
+        name="email"
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
             style={styles.Signupinput}
-            placeholder="Username"
+            placeholder="Enter your Email"
             value={value}
             onChangeText={onChange}
           />
         )}
       />
-      {errors.username && <Text style={styles.errorText}>{errors.username.message}</Text>}
-      
+      {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
       <Controller
         control={control}
         name="password"
@@ -60,52 +60,6 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
         )}
       />
       {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
-      
-      <Controller
-        control={control}
-        name="email"
-        defaultValue=""
-        render={({ field: { onChange, value } }) => (
-          <TextInput
-            style={styles.Signupinput}
-            placeholder="Enter your Email"
-            value={value}
-            onChangeText={onChange}
-          />
-        )}
-      />
-      {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
-      
-      <Controller
-        control={control}
-        name="firstname"
-        defaultValue=""
-        render={({ field: { onChange, value } }) => (
-          <TextInput
-            style={styles.Signupinput}
-            placeholder="Enter Your FirstName"
-            value={value}
-            onChangeText={onChange}
-          />
-        )}
-      />
-      {errors.firstname && <Text style={styles.errorText}>{errors.firstname.message}</Text>}
-      
-      <Controller
-        control={control}
-        name="lastname"
-        defaultValue=""
-        render={({ field: { onChange, value } }) => (
-          <TextInput
-            style={styles.Signupinput}
-            placeholder="Enter Your LastName"
-            value={value}
-            onChangeText={onChange}
-          />
-        )}
-      />
-      {errors.lastname && <Text style={styles.errorText}>{errors.lastname.message}</Text>}
-      
       <TouchableOpacity style={styles.Signupbutton} onPress={handleSubmit(onSubmit)}>
         <Text style={styles.SignupbuttonText}>Register</Text>
       </TouchableOpacity>

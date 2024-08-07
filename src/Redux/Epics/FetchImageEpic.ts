@@ -8,7 +8,7 @@ import { ImageData } from '../../Screens/ScreenHome/utils/types';
 interface ApiResponse {
   hits: ImageData[];
 }
-
+  
 export const fetchImagesEpic = (action$: Observable<ImageFetch>) =>
   action$.pipe(
     ofType(fetchImagesRequest.type),
