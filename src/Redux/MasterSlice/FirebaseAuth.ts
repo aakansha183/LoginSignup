@@ -1,5 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
 
 export const signInWithEmail = async (email: string, password: string) => {
   try {
@@ -34,9 +36,11 @@ export const signUpWithEmail = async (email: string, password: string) => {
   }
 };
 
+
 export const logoutUser = async () => {
   try {
     await auth().signOut();
+    await GoogleSignin.signOut();
     AsyncStorage.removeItem('authToken');
    
   } catch (error) {

@@ -2,8 +2,8 @@ import React from 'react';
 import { View,Text,Image,FlatList } from 'react-native';
 import { ImageData, ImageListProps } from '../utils/types';
 import { styles } from '../StylesHome';
-import LikeIcon from '../../../Assests/ImagesData.tsx/ImageLikeIcon';
-import EyeIcon from '../../../Assests/ImagesData.tsx/ImageViewIcon';
+import LikeIcon from '../../../Assests/ImagesData/ImageLikeIcon';
+import EyeIcon from '../../../Assests/ImagesData/ImageViewIcon';
 
 const ImageList: React.FC<ImageListProps> = ({ data }) => {
   const renderItem = ({ item }: { item: ImageData }) => (

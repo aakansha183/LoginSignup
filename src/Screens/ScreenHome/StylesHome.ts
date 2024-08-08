@@ -13,9 +13,9 @@ export const styles = StyleSheet.create({
   },
   imageContainer: {
     marginBottom: 16,
-    padding: 20,
+    
     backgroundColor: '#fff',
-    borderRadius: 8,
+    borderRadius: 12,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
@@ -32,15 +32,17 @@ export const styles = StyleSheet.create({
   imageFetched: {
     width: '100%',
     height: 230,
-    borderRadius:12,
+    borderRadius:10,
   },
   imageTitle:{
+    marginLeft:15,
     top:10,
     fontSize:25,
     color:'#0C0404',
     fontWeight:'bold',
     marginTop:10,
     marginBottom:20,
+    
   },
   likes:{
     left:0,
@@ -52,6 +54,7 @@ export const styles = StyleSheet.create({
   },
   likeContainer: {
     flexDirection: 'row',
+    marginLeft:10,
     alignItems: 'center',
   },
   
@@ -60,12 +63,13 @@ export const styles = StyleSheet.create({
     color: '#888',
     padding: 5,
     borderRadius: 3,
-
+    
   },
   viewContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 5,
+    marginLeft:10,
   },
  
 });
