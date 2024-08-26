@@ -1,4 +1,3 @@
-// src/Navigation/AppNavigator.tsx
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +8,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
 import { login } from '../Redux/MasterSlice/UserSlice';
+import { View } from 'react-native';
+import LottieView from 'lottie-react-native';
+import { stylesplash } from '../Screens/ScreenSplash/StylesSplash';
 
 const AuthStack = createStackNavigator();
 const AppStack = createStackNavigator();
@@ -27,23 +29,39 @@ const AppNavigator: React.FC = () => (
 );
 
 const MainNavigator: React.FC = () => {
-const isAuthenticated = useSelector((state:RootState)=>state.auth.isLoggedIn);
-const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const checkUserToken = async () => {
       try {
         const userToken = await AsyncStorage.getItem('authToken');
-        if(userToken){
-          dispatch(login('User'))
+        if (userToken) {
+          dispatch(login('User'));
         }
       } catch (error) {
         console.error('Failed to fetch the user token:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     checkUserToken();
   }, [dispatch]);
 
+  if (isLoading) {
+    return (
+      <View style={stylesplash.loaderContainer}>
+       <LottieView
+          source={require('../Assests/ImagesData/SplashAnimation.json')} 
+          autoPlay
+          loop
+          style={stylesplash.animation} 
+        />
+      </View>
+    );
+  }
 
   return (
     <NavigationContainer>
