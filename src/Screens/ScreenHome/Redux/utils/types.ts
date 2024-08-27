@@ -1,4 +1,4 @@
-import { ImageData } from "../../Screens/ScreenHome/utils/types";
+import { ImageData } from "../../utils/types";
 
 export interface ImageState {
     images: ImageData[];

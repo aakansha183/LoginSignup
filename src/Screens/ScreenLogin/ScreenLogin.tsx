@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Alert, TouchableOpacity, StatusBar, Image } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { login } from '../../Redux/MasterSlice/UserSlice';
+import { login } from '../ScreenHome/Redux/MasterSlice/UserSlice';
 import { styles } from './StylesLogin';
 import { LoginForm, LoginScreenNavigationProp } from './utils/types';
 import { validationSchema } from './utils/ValidationSchema';
@@ -13,7 +13,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import GoogleIcon from '../../Assests/ImagesData/ImageGoogle';
 import FacebookIcon from '../../Assests/ImagesData/ImageFacebook';
 import PhoneIcon from '../../Assests/ImagesData/ImagePhone';
-import { signInWithEmail } from '../../Redux/MasterSlice/FirebaseAuth';
+import { signInWithEmail } from '../ScreenHome/Redux/MasterSlice/FirebaseAuth';
 
 type Props = {
   navigation: LoginScreenNavigationProp;

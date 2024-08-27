@@ -1,13 +1,13 @@
 import React, { useEffect, useCallback } from 'react';
 import { View, Text, Button, ActivityIndicator, BackHandler } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchImagesRequest } from '../../Redux/MasterSlice/ImageSlice';
-import { RootState } from '../../Redux/store';
+import { fetchImagesRequest } from './Redux/MasterSlice/ImageSlice';
+import { RootState } from './Redux/store';
 import { styles } from './StylesHome';
 import { HomeScreenNavigationProp } from './utils/types';
 import ImageList from './Components/ComponentImageList';
-import { logout } from '../../Redux/MasterSlice/UserSlice';
-import { logoutUser } from '../../Redux/MasterSlice/FirebaseAuth';
+import { logout } from './Redux/MasterSlice/UserSlice';
+import { logoutUser } from './Redux/MasterSlice/FirebaseAuth';
 
 type Props = {
   navigation: HomeScreenNavigationProp;

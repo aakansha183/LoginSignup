@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ImageData } from '../../Screens/ScreenHome/utils/types';
+import { ImageData } from '../../utils/types';
 import { ImageState } from '../utils/types';
 
 const initialState: ImageState = {

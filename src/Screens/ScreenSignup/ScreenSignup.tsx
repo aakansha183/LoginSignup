@@ -3,11 +3,11 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { login } from '../../Redux/MasterSlice/UserSlice';  
+import { login } from '../ScreenHome/Redux/MasterSlice/UserSlice';  
 import { RegisterForm, RegisterScreenNavigationProp } from './utils/types';
 import { styles } from './Stylessignup';
 import { validationSchema } from './utils/ValidationSchema';
-import { signUpWithEmail } from '../../Redux/MasterSlice/FirebaseAuth';
+import { signUpWithEmail } from '../ScreenHome/Redux/MasterSlice/FirebaseAuth';
 
 type Props = {
   navigation: RegisterScreenNavigationProp;

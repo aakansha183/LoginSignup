@@ -3,7 +3,7 @@ import { mergeMap } from 'rxjs/operators';
 import { from, of, Observable } from 'rxjs';
 import axios from 'axios';
 import { fetchImagesRequest, fetchImagesSuccess, fetchImagesFailure, ImageFetch } from '../MasterSlice/ImageSlice';
-import { ImageData } from '../../Screens/ScreenHome/utils/types';
+import { ImageData } from '../../utils/types';
 import { makeGetRequest } from '../Interceptors';
 
 interface ApiResponse {
