@@ -8,6 +8,7 @@ import { HomeScreenNavigationProp } from './utils/types';
 import ImageList from './Components/ComponentImageList';
 import { logout } from './Redux/MasterSlice/UserSlice';
 import { logoutUser } from './Redux/MasterSlice/FirebaseAuth';
+import { Image } from 'react-native-reanimated/lib/typescript/Animated';
 
 type Props = {
   navigation: HomeScreenNavigationProp;
@@ -23,7 +24,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
 
   const handleLogout = async() => {
-    await logoutUser();
+    // await logoutUser();
     dispatch(logout());
   };
 

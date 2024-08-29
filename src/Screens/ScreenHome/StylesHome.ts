@@ -12,8 +12,7 @@ export const styles = StyleSheet.create({
   textAlign:'center',
   },
   imageContainer: {
-    marginBottom: 16,
-    
+    width:400,
     backgroundColor: '#fff',
     borderRadius: 12,
     shadowColor: '#000',
@@ -21,6 +20,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 3,
+    margin:10,
     
   },
   welcomeHeader:{
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   imageFetched: {
     width: '100%',
-    height: 230,
+    height: 250,
     borderRadius:10,
   },
   imageTitle:{
@@ -70,6 +70,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 5,
     marginLeft:10,
+  },
+  dotStyle: {
+    width: 20,
+    height: 12,
+    borderRadius: 5,
+    marginHorizontal: 5,
+  },
+  dotContainer: {
+    position: 'absolute',
+    bottom: ('5%'),
+    alignSelf: 'center',
   },
  
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Image, StatusBar } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Controller, useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -30,7 +30,11 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.HeadingTitle}>Register Yourself</Text>
+   <StatusBar translucent backgroundColor='transparent' barStyle="dark-content" />
+
+    <Image source={require('../../Assests/Images/LoginImage.png')} style={styles.Signupimage} />
+<View style = {styles.card}> 
+
       <Controller
         control={control}
         name="email"
@@ -62,7 +66,12 @@ const ScreenSignup: React.FC<Props> = ({ navigation }) => {
       {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
       <TouchableOpacity style={styles.Signupbutton} onPress={handleSubmit(onSubmit)}>
         <Text style={styles.SignupbuttonText}>Register</Text>
+       
       </TouchableOpacity>
+      <Text onPress={() => navigation.navigate('Login')} style={styles.link}>
+          Already have an account? Login
+        </Text>
+      </View>
     </View>
   );
 };

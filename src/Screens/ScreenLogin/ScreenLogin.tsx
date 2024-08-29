@@ -64,7 +64,7 @@ const ScreenLogin: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor='transparent' barStyle="dark-content" />
-      <Image source={require('../../Assests/ImagesData/LoginImage.png')} style={styles.loginimage} />
+      <Image source={require('../../Assests/Images/LoginImage.png')} style={styles.loginimage} />
       <View style={styles.card}>
         <Controller
           control={control}

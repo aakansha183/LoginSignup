@@ -17,7 +17,7 @@ const AppStack = createStackNavigator();
 
 const AuthNavigator: React.FC = () => (
   <AuthStack.Navigator initialRouteName="Login">
-    <AuthStack.Screen name="Login" component={LoginScreen} />
+    <AuthStack.Screen name="Login" component={LoginScreen}  />
     <AuthStack.Screen name="Register" component={RegisterScreen} />
   </AuthStack.Navigator>
 );
