@@ -1,24 +1,14 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import store from './src/Redux/store';
-import RegisterScreen from './src/Screens/ScreenSignup/ScreenSignup';
-import LoginScreen from './src/Screens/ScreenLogin/ScreenLogin';
-import HomeScreen from './src/Screens/ScreenHome/ScreenHome';
-
-const Stack = createStackNavigator();
+import store from './src/Screens/ScreenHome/Redux/store';
+import MainNavigator from './src/Routes/AppRouter';
+import messaging from '@react-native-firebase/messaging';
 
 const App: React.FC = () => {
+  
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <MainNavigator />
     </Provider>
   );
 };

@@ -1,4 +1,16 @@
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../../../utils/Types";
+import { RootStackParamList } from '../../../utils/Types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+
+export interface ImageData {
+  id: number;
+  likes: number;
+  views: number;
+  
+  webformatURL: string;
+  tags: string;
+}
+export interface ImageListProps {
+  data: ImageData[];
+}
